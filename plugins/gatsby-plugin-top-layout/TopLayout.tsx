@@ -30,8 +30,7 @@ interface ThemeState {
 }
 const initialState: ThemeState = {
   darkMode:
-    typeof window !== 'undefined' &&
-    window.localStorage.getItem('theme') === 'dark',
+    typeof window !== 'undefined' && localStorage.getItem('theme') === 'dark',
 };
 
 type Action = { type: 'TOGGLE_DARKMODE' };
@@ -63,7 +62,7 @@ export default function TopLayout(props: TopLayoutProps): React.ReactElement {
   const [state, dispatch] = React.useReducer(themeReducer, initialState);
   const mode = React.useMemo(() => {
     const res = state.darkMode ? 'dark' : 'light';
-    localStorage.setItem('theme', res);
+    if (typeof window !== 'undefined') localStorage.setItem('theme', res);
     return res;
   }, [state.darkMode]);
   const theme = React.useMemo(() => {
