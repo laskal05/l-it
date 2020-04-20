@@ -38,15 +38,16 @@
   ],
   "license": "MIT",
   "scripts": {
+    "ci": "npm i",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0",
     "push": "gh-pages -d public -b master",
-    "deploy": "yarn build && yarn push"
+    "deploy": "npm run build && npm run push"
   },
   "repository": {
     "type": "git",
