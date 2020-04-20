@@ -45,3 +45,4 @@ jobs:
         publish_dir: ./public
         publish_branch: master
         cname: l-it.site
+        force_orphan: true
