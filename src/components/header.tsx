@@ -8,6 +8,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
+import DarkModeButton from './darkmodeButton';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -60,6 +61,7 @@ function Header(props: HeaderProps): React.ReactElement {
         <Button variant="outlined" size="small">
           Sign up
         </Button>
+        <DarkModeButton />
       </Toolbar>
       <Toolbar
         component="nav"
