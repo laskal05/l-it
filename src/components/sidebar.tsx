@@ -48,7 +48,7 @@ export default function Sidebar(props: SidebarProps): React.ReactElement {
         Social
       </Typography>
       {social.map((network, i) => (
-        <Link display="block" variant="body1" href="#" key={i.toString()}>
+        <Link display="block" variant="body1" href={network.href} key={i.toString()}>
           <Grid container direction="row" spacing={1} alignItems="center">
             <Grid item>
               <network.icon />
