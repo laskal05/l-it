@@ -81,12 +81,10 @@ function IndexPage(): React.ReactElement {
 
   return (
     <Layout
-      title="Blog"
+      title="L;IT"
       sections={sections}
-      footerTitle="Footer"
-      description="Something here to give the footer a purpose!"
     >
-      <SEO title="Home" />
+      <SEO title="L;IT" />
       <main>
         <MainFeaturedPost post={mainFeaturedPost} />
         <Grid container spacing={4}>
