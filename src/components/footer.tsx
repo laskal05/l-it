@@ -7,7 +7,7 @@ function Copyright(): React.ReactElement {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        laskal05
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export interface FooterProps {
-  description: string;
-  footerTitle: string;
+  description?: string;
+  footerTitle?: string;
 }
 
 export default function Footer(props: FooterProps): React.ReactElement {

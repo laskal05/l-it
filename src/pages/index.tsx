@@ -22,16 +22,10 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'Home', url: 'home' },
+  { title: 'Technology', url: 'technology' },
+  { title: 'Design', url: 'design' },
+  { title: 'Business', url: 'bussiness' },
 ];
 
 const mainFeaturedPost = {
@@ -68,11 +62,14 @@ const sidebar = {
   title: 'About',
   description:
     'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
-  archives: [
-  ],
+  archives: [],
   social: [
-    { name: 'GitHub', icon: GitHubIcon, href: "https://github.com/laskal05/" },
-    { name: 'Twitter', icon: TwitterIcon, href: "https://twitter.com/laskal05/" },
+    { name: 'GitHub', icon: GitHubIcon, href: 'https://github.com/laskal05/' },
+    {
+      name: 'Twitter',
+      icon: TwitterIcon,
+      href: 'https://twitter.com/laskal05/',
+    },
   ],
 };
 
@@ -80,10 +77,7 @@ function IndexPage(): React.ReactElement {
   const classes = useStyles();
 
   return (
-    <Layout
-      title="L;IT"
-      sections={sections}
-    >
+    <Layout title="L;IT" sections={sections}>
       <SEO title="L;IT" />
       <main>
         <MainFeaturedPost post={mainFeaturedPost} />
@@ -93,7 +87,11 @@ function IndexPage(): React.ReactElement {
           ))}
         </Grid>
         <Grid container spacing={5} className={classes.mainGrid}>
-          <Main title="From the firehose" posts={posts} />
+          <Grid item xs={12} md={8}>
+            {sections.map(section => (
+              <Main title={section.title} posts={[]} url={section.url} />
+            ))}
+          </Grid>
           <Sidebar
             title={sidebar.title}
             description={sidebar.description}

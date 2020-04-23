@@ -1,13 +1,7 @@
 import * as React from 'react';
+import { animateScroll as scroll, scroller } from 'react-scroll';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Link,
-  Toolbar,
-  Button,
-  IconButton,
-  Typography,
-} from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
+import { Link, Toolbar, Typography } from '@material-ui/core';
 import DarkModeButton from './darkmodeButton';
 
 const useStyles = makeStyles(theme => ({
@@ -44,7 +38,6 @@ function Header(props: HeaderProps): React.ReactElement {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size="small">Subscribe</Button>
         <Typography
           component="h2"
           variant="h5"
@@ -55,12 +48,6 @@ function Header(props: HeaderProps): React.ReactElement {
         >
           {title}
         </Typography>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
         <DarkModeButton />
       </Toolbar>
       <Toolbar
@@ -71,11 +58,16 @@ function Header(props: HeaderProps): React.ReactElement {
         {sections.map((section, i) => (
           <Link
             color="inherit"
-            noWrap
             key={i.toString()}
-            variant="body2"
-            href={section.url}
             className={classes.toolbarLink}
+            href="#"
+            onClick={() => {
+              scroller.scrollTo(section.url, {
+                duration: 800,
+                delay: 0,
+                smooth: 'easeInOutQuart',
+              });
+            }}
           >
             {section.title}
           </Link>
