@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "l-it",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "used by Gatsby",
   "version": "0.1.0",
   "author": "Rio Hosoi <hrh.syn.mnmk.lb@gmail.com>",
   "dependencies": {

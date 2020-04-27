@@ -36,7 +36,7 @@ function Header(props: HeaderProps): React.ReactElement {
   const { sections = [], title } = props;
 
   return (
-    <React.Fragment>
+    <>
       <Toolbar className={classes.toolbar}>
         <Typography
           component="h2"
@@ -73,7 +73,7 @@ function Header(props: HeaderProps): React.ReactElement {
           </Link>
         ))}
       </Toolbar>
-    </React.Fragment>
+    </>
   );
 }
 

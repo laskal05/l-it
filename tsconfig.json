@@ -2,11 +2,12 @@
   "compilerOptions": {
     "outDir": "./public/assets/",
     "sourceMap": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "module": "commonjs",
     "target": "esnext",
     "jsx": "react",
-    "lib": ["dom", "es2015", "es2017"]
+    "lib": ["dom", "es2015", "es2017"],
+    "typeRoots": ["./src/types"]
   },
   "include": ["./src/**/*"]
 }

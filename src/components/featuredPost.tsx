@@ -9,6 +9,7 @@ import {
   CardMedia,
   Hidden,
 } from '@material-ui/core';
+import { FeaturedPostProps } from 'l-it/types';
 
 const useStyles = makeStyles({
   card: {
@@ -22,19 +23,15 @@ const useStyles = makeStyles({
   },
 });
 
-interface FeaturedPostProps {
-  post: { [key: string]: string };
-}
-
 export default function FeaturedPost(
   props: FeaturedPostProps,
 ): React.ReactElement {
   const classes = useStyles();
-  const { post } = props;
+  const { post, gridMDNum } = props;
 
   return (
-    <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href="#">
+    <Grid item xs={12} md={gridMDNum}>
+      <CardActionArea component="a" href={post.href}>
         <Card className={classes.card}>
           <div className={classes.cardDetails}>
             <CardContent>
@@ -46,9 +43,6 @@ export default function FeaturedPost(
               </Typography>
               <Typography variant="subtitle1" paragraph>
                 {post.description}
-              </Typography>
-              <Typography variant="subtitle1" color="primary">
-                Continue reading...
               </Typography>
             </CardContent>
           </div>
