@@ -3,16 +3,16 @@ import * as React from 'react';
 import FeaturedPost from './featuredPost';
 
 export default function Works(): React.ReactElement {
-  const [l, setL] = React.useState(JSON.stringify({}));
-  const options = {
-    method: 'GET',
-  };
-  const langs = fetch(
-    'https://api.github.com/repos/laskal05/l-it/languages',
-    options,
-  )
-    .then(res => res.json())
-    .then(res => setL(JSON.stringify(res)));
+  // const [l, setL] = React.useState(JSON.stringify({}));
+  // const options = {
+  //   method: 'GET',
+  // };
+  // const langs = fetch(
+  //   'https://api.github.com/repos/laskal05/l-it/languages',
+  //   options,
+  // )
+  //   .then(res => res.json())
+  //   .then(res => setL(JSON.stringify(res)));
 
   const cards = [
     {
