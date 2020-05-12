@@ -33,7 +33,7 @@ const sections: Array<MainProps> = [
 const mainCard = {
   title: 'Engineer',
   description:
-    'ホームページ、システム開発、業務効率化のITに関わる仕事の他、様々な業種に関わっています',
+    'ホームページ、システム開発、業務効率化などのITに関わる仕事の他、様々な業種に関わっています',
   image: 'https://source.unsplash.com/random',
   imgText: 'random image',
   linkText: 'Continue reading…',
